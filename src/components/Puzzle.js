@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { Content, Centered, Animations } from "../styled";
-import { puzzle_instructions } from "../messages/messages.en.json";
+import { Content, Centered, Animations, Button } from "../styled";
+import { puzzle_instructions, puzzle_done } from "../messages/messages.en.json";
 import clockwise from "../assets/clockwise_rotation.png";
 import unclockwise from "../assets/anticlockwise_rotation.png";
 import flip from "../assets/flip_rotation.png";
@@ -60,7 +60,7 @@ const ActionBar = styled.div`
   }
 `;
 
-export default ({ images, selectedImage, onImageClick, onRotate }) => {
+export default ({ images, selectedImage, onImageClick, onRotate, onDone }) => {
   const visible =
     selectedImage &&
     !images.find(
@@ -68,13 +68,13 @@ export default ({ images, selectedImage, onImageClick, onRotate }) => {
         id === selectedImage && RESULTS[id] === rotation % 360
     );
 
+  const isDone = images.every(({rotation, id }) => RESULTS[id] === rotation % 360);
+
   return (
     <Animations.FadeIn>
       <Wrapper>
         <Content>{puzzle_instructions}</Content>
-        <ActionBar
-          visible={visible}
-        >
+        <ActionBar visible={visible}>
           <Rotate
             alt="rotate_90"
             onClick={() => visible && onRotate(90)}
@@ -105,6 +105,7 @@ export default ({ images, selectedImage, onImageClick, onRotate }) => {
             />
           ))}
         </Centered>
+        {isDone && <Button onClick={onDone}>{puzzle_done}</Button>}
       </Wrapper>
     </Animations.FadeIn>
   );

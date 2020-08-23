@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Agreement from "./Agreement";
 import Puzzle from "./Puzzle";
 import sea from "../assets/sea.jpg";
+import Questions from "./Questions";
 
 const IMAGES = [
   { id: "sea", src: sea, rotation: 0 },
@@ -12,7 +13,8 @@ const IMAGES = [
 
 function App() {
   const [images, setImages] = useState(IMAGES);
-  const [step, setStep] = useState("Agreement");
+  const [step, setStep] = useState("1");
+  // const [step, setStep] = useState("Agreement");
   const [selectedImage, setSelectedImage] = useState(null);
 
   const rotate = (deg) => {
@@ -27,6 +29,8 @@ function App() {
 
   return (
     <>
+      {step === "1" && <Questions onDone={() => setStep("Next")} />}
+
       {step === "Agreement" && <Agreement onSubmit={() => setStep("Puzzle")} />}
       {step === "Puzzle" && (
         <Puzzle
@@ -34,8 +38,11 @@ function App() {
           onImageClick={setSelectedImage}
           selectedImage={selectedImage}
           onRotate={rotate}
+          onDone={() => setStep("Questions")}
         />
       )}
+      {step === "Questions" && <Questions onDone={() => setStep("Next")} />}
+      {step === "Next" && <Questions />}
     </>
   );
 }
