@@ -45,52 +45,51 @@ export default ({ onDone }) => {
             <span>7</span>
           </Table>
           <Table>
-              <span>{questions_q1}</span>
+              <OptionIndicator>{questions_q1}</OptionIndicator>
               <Table flexDirection="row" justifyContent={"space-between"}>
-                  <input type="radio" value="option1" />
-                  <input type="radio" value="option2" />
-                  <input type="radio" value="option3" />
-                  <input type="radio" value="option4" />
-                  <input type="radio" value="option5" />
-                  <input type="radio" value="option6" />
-                  <input type="radio" value="option7" />
+                  <input type="radio" value="option1" name="q1" />
+                  <input type="radio" value="option2" name="q1" />
+                  <input type="radio" value="option3" name="q1" />
+                  <input type="radio" value="option4" name="q1" />
+                  <input type="radio" value="option5" name="q1" />
+                  <input type="radio" value="option6" name="q1" />
+                  <input type="radio" value="option7" name="q1" />
               </Table>
-              <span>{questions_q2}</span>
+              <OptionIndicator>{questions_q2}</OptionIndicator>
               <Table flexDirection="row" justifyContent={"space-between"}>
-                  <input type="radio" value="option1" />
-                  <input type="radio" value="option2" />
-                  <input type="radio" value="option3" />
-                  <input type="radio" value="option4" />
-                  <input type="radio" value="option5" />
-                  <input type="radio" value="option6" />
-                  <input type="radio" value="option7" />
+                  <input type="radio" value="option1" name="q2" />
+                  <input type="radio" value="option2" name="q2" />
+                  <input type="radio" value="option3" name="q2" />
+                  <input type="radio" value="option4" name="q2" />
+                  <input type="radio" value="option5" name="q2" />
+                  <input type="radio" value="option6" name="q2" />
+                  <input type="radio" value="option7" name="q2" />
               </Table>
-              <span>{questions_q3}</span>
+              <OptionIndicator>{questions_q3}</OptionIndicator>
               <Table flexDirection="row" justifyContent={"space-between"}>
-                  <input type="radio" value="option1" />
-                  <input type="radio" value="option2" />
-                  <input type="radio" value="option3" />
-                  <input type="radio" value="option4" />
-                  <input type="radio" value="option5" />
-                  <input type="radio" value="option6" />
-                  <input type="radio" value="option7" />
+                  <input type="radio" value="option1" name="q3" />
+                  <input type="radio" value="option2" name="q3" />
+                  <input type="radio" value="option3" name="q3" />
+                  <input type="radio" value="option4" name="q3" />
+                  <input type="radio" value="option5" name="q3" />
+                  <input type="radio" value="option6" name="q3" />
+                  <input type="radio" value="option7" name="q3" />
               </Table>
-              <span>{questions_q4}</span>
+              <OptionIndicator>{questions_q4}</OptionIndicator>
               <Table flexDirection="row" justifyContent={"space-between"}>
-                  <input type="radio" value="option1" />
-                  <input type="radio" value="option2" />
-                  <input type="radio" value="option3" />
-                  <input type="radio" value="option4" />
-                  <input type="radio" value="option5" />
-                  <input type="radio" value="option6" />
-                  <input type="radio" value="option7" />
+                  <input type="radio" value="option1" name="q4" />
+                  <input type="radio" value="option2" name="q4" />
+                  <input type="radio" value="option3" name="q4" />
+                  <input type="radio" value="option4" name="q4" />
+                  <input type="radio" value="option5" name="q4" />
+                  <input type="radio" value="option6" name="q4" />
+                  <input type="radio" value="option7" name="q4" />
               </Table>
           </Table>
         </Centered>
 
         <Button onClick={onDone}>{questions_done}</Button>
       </Centered>
-      <span>hey</span>
     </Animations.FadeIn>
   );
 };

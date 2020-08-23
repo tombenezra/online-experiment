@@ -13,8 +13,7 @@ const IMAGES = [
 
 function App() {
   const [images, setImages] = useState(IMAGES);
-  const [step, setStep] = useState("1");
-  // const [step, setStep] = useState("Agreement");
+  const [step, setStep] = useState("Agreement");
   const [selectedImage, setSelectedImage] = useState(null);
 
   const rotate = (deg) => {
@@ -29,8 +28,6 @@ function App() {
 
   return (
     <>
-      {step === "1" && <Questions onDone={() => setStep("Next")} />}
-
       {step === "Agreement" && <Agreement onSubmit={() => setStep("Puzzle")} />}
       {step === "Puzzle" && (
         <Puzzle
