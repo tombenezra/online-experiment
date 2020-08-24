@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
+import "../i18n";
+import Language from "./Language";
 import Agreement from "./Agreement";
 import Puzzle from "./Puzzle";
 import sea from "../assets/sea.jpg";
 import Questions from "./Questions";
+import { useTranslation } from "react-i18next";
 
 const IMAGES = [
   { id: "sea", src: sea, rotation: 0 },
@@ -13,7 +16,7 @@ const IMAGES = [
 
 function App() {
   const [images, setImages] = useState(IMAGES);
-  const [step, setStep] = useState("Agreement");
+  const [step, setStep] = useState("Language");
   const [selectedImage, setSelectedImage] = useState(null);
 
   const rotate = (deg) => {
@@ -26,8 +29,24 @@ function App() {
     setImages(newImages);
   };
 
+  // loading component for suspense fallback
+  const Loader = () => (
+    <div className="App">
+      <div>loading...</div>
+    </div>
+  );
+
+  const { i18n } = useTranslation("global");
+  const changeLanguage = lng => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
-    <>
+    <Suspense fallback={<Loader />}>
+      {step === "Language" && <Language onLanguage={lng => {
+        changeLanguage(lng)
+        setStep("Agreement")
+      }} />}
       {step === "Agreement" && <Agreement onSubmit={() => setStep("Puzzle")} />}
       {step === "Puzzle" && (
         <Puzzle
@@ -40,7 +59,7 @@ function App() {
       )}
       {step === "Questions" && <Questions onDone={() => setStep("Next")} />}
       {step === "Next" && <Questions />}
-    </>
+    </Suspense>
   );
 }
 

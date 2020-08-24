@@ -1,0 +1,18 @@
+{
+    "scientific_agreement_title": "הסכמה מדעית",
+    "scientific_agreement_content": "Dear participant, The present study examines the impact of time on our lives and consists of a number of different steps under which you will be asked to complete a number of questionnaires and perform various tasks. In order for you to be able to participate in your system, you need to sign your status. If you are not interested in continuing your research, you may refuse to retire or retire without being harmed in any way. All book collected about you in this study is free admission to the study only; The confidentiality of the details is guaranteed. Please be sure to read the instructions for filling out the questionnaires carefully and follow them. We thank you very much for your time and willingness to take part in the study and we will be happy to share the information findings after it is completed (by contacting the lead researcher at noykokia@gmail.com). After reading and understanding the things, do you agree with the research?",
+    "scientific_agreement_accept_button": "Accept",
+
+    "puzzle_instructions": "Now, you need to place the parts that appear below in their correct position within the frame so that the image appears in its entirety. From the moment you move one of the pieces from its position in the row, you must wait a few seconds (a stopwatch will appear) until it is placed in the frame of the image.",
+    "puzzle_done": "Continue",
+
+    "questions_title": "Questions",
+    "questions_intro": "Please read the following questions and rate the extent to which each sentence describes your feelings / feelings at the moment towards the video viewing experience, on a scale ranging from 1 (do not agree at all) to 7 (strongly agree):",
+    "questions_worst": "Not agreeing at all",
+    "questions_best": "Strongly agree",
+    "questions_done": "Continue",
+    "questions_q1": "question #1",
+    "questions_q2": "question #2",
+    "questions_q3": "question #3",
+    "questions_q4": "question #4"
+}
